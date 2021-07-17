@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:get/get.dart';
+import 'package:grocery_app/UI/categories/caregoriesScreen.dart';
 import 'package:grocery_app/UI/home/homeScreen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -34,7 +35,7 @@ class _MainScreenState extends State<MainScreen> {
         onPageChanged: onTabChanged,
         children: <Widget>[
           new HomeScreen(),
-          new HomeScreen(),
+          new CategoriesScreen(),
           new HomeScreen(),
           new HomeScreen(),
           new HomeScreen(),
