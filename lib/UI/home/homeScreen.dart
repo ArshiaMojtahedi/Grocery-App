@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/UI/home/widgets/horizentalItemList.dart';
 import 'package:grocery_app/Utils/colors.dart';
@@ -13,9 +14,60 @@ class HomeScreen extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 16,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 24, vertical: 12),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          width: 25,
+                        ),
+                        Row(
+                          children: [
+                            Image.asset(
+                              "assets/images/logo.png",
+                              // height: 30,
+                              width: 25,
+                            ),
+                            SizedBox(
+                              width: 8,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 4.0),
+                              child: Text(
+                                "Havij",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Colors.orange[900],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Badge(
+                          // showBadge: false,
+                          animationType: BadgeAnimationType.slide,
+                          badgeContent: Text(
+                            "10",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                            ),
+                          ),
+                          badgeColor: Colors.orange[900],
+                          padding: EdgeInsets.only(
+                              top: 7, right: 6, left: 6, bottom: 6),
+                          position: BadgePosition(bottom: 10, start: 18),
+                          child: Image.asset(
+                            "assets/images/tab_cart_off.png",
+                            height: 25,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
+
                   // CircleAvatar(
                   //   backgroundColor: Colors.black12,
                   //   child: Icon(
@@ -23,13 +75,10 @@ class HomeScreen extends StatelessWidget {
                   //     color: Appcolors().textColor3,
                   //   ),
                   // ),
-                  Image.asset(
-                    "assets/images/logo.png",
-                    height: 30,
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
+
+                  // SizedBox(
+                  //   height: 8,
+                  // ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -40,11 +89,18 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         width: 8,
                       ),
-                      Text(
-                        "Home",
-                        style: TextStyle(fontSize: 18),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 2),
+                        child: Text(
+                          "Amjadieh, Bahar",
+                          style: TextStyle(fontSize: 18),
+                        ),
                       )
                     ],
+                  ),
+                  Text(
+                    "Change Address",
+                    style: TextStyle(fontSize: 12, color: Appcolors().green),
                   ),
                   SizedBox(
                     height: 24,
@@ -72,6 +128,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                   HorizentalItemList(
                     title: "Best Selling",
+                  ),
+                  SizedBox(
+                    height: 32,
                   ),
                 ],
               ),
