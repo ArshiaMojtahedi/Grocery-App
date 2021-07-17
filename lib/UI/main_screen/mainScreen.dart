@@ -48,7 +48,7 @@ class _MainScreenState extends State<MainScreen> {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(18), topRight: Radius.circular(18)),
         ),
-        snakeViewColor: Colors.white,
+        snakeViewColor: Color(0xFF53B175),
         selectedItemColor: Color(0xFF53B175),
         unselectedItemColor: Colors.black,
         selectedLabelStyle: TextStyle(
@@ -68,21 +68,21 @@ class _MainScreenState extends State<MainScreen> {
         items: [
           BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 4),
+                padding: EdgeInsets.only(bottom: 4, top: 4),
                 child: _tab == 0
                     ? Image.asset(
-                        "assets/images/tab_cart_on.png",
+                        "assets/images/tab_orders_on.png",
                         height: 24,
                       )
                     : Image.asset(
-                        "assets/images/tab_cart_off.png",
+                        "assets/images/tab_orders_off.png",
                         height: 24,
                       ),
               ),
-              label: 'Cart'),
+              label: 'Orders'),
           BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 4),
+                padding: EdgeInsets.only(bottom: 4, top: 4),
                 child: _tab == 1
                     ? Image.asset(
                         "assets/images/tab_explore_on.png",
@@ -96,7 +96,7 @@ class _MainScreenState extends State<MainScreen> {
               label: 'Explore'),
           BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 4),
+                padding: EdgeInsets.only(bottom: 4, top: 4),
                 child: _tab == 2
                     ? Image.asset(
                         "assets/images/tab_shop_on.png",
@@ -110,7 +110,7 @@ class _MainScreenState extends State<MainScreen> {
               label: 'Shop'),
           BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 4),
+                padding: EdgeInsets.only(bottom: 4, top: 4),
                 child: _tab == 3
                     ? Image.asset(
                         "assets/images/tab_favorites_on.png",
@@ -124,7 +124,7 @@ class _MainScreenState extends State<MainScreen> {
               label: 'Favorites'),
           BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.only(bottom: 4),
+                padding: EdgeInsets.only(bottom: 4, top: 4),
                 child: _tab == 4
                     ? Image.asset(
                         "assets/images/tab_account_on.png",

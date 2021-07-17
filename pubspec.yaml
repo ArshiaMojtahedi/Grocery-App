@@ -53,6 +53,16 @@ flutter:
     - assets/images/tab_favorites_off.png
     - assets/images/tab_account_on.png
     - assets/images/tab_account_off.png
+    - assets/images/tab_orders_on.png
+    - assets/images/tab_orders_off.png
+    - assets/images/search_icon.png
+    - assets/images/location_icon.png
+    - assets/images/logo.png
+    - assets/images/add_to_cart_icon.png
+
+    #TEMP
+    - assets/images/temp/item1.png
+    - assets/images/temp/banner.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
