@@ -15,7 +15,9 @@ class CategoriesScreen extends StatelessWidget {
       child: SafeArea(
         child: Scaffold(
           appBar: AppBarLayout(
-            child: SimpleAppBar(),
+            child: MainAppbar(
+              title: "Categories",
+            ),
           ),
           body: Container(
             child: SingleChildScrollView(

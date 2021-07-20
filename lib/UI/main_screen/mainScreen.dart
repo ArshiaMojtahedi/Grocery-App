@@ -3,6 +3,7 @@ import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/UI/categories/caregoriesScreen.dart';
 import 'package:grocery_app/UI/home/homeScreen.dart';
+import 'package:grocery_app/Utils/colors.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -12,13 +13,12 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   PageController _tabController;
 
-  int _tab = 1;
-  // List<String> title = ["Activities", "Home", "Blog"];
+  int _tab = 2;
 
   @override
   void initState() {
     super.initState();
-    _tabController = new PageController(initialPage: 1);
+    _tabController = new PageController(initialPage: 2);
   }
 
   @override
@@ -64,7 +64,7 @@ class _MainScreenState extends State<MainScreen> {
         showSelectedLabels: true,
         currentIndex: _tab,
         onTap: onTap,
-        elevation: 10,
+        elevation: 1100,
         shadowColor: Colors.black,
         items: [
           BottomNavigationBarItem(
@@ -72,7 +72,8 @@ class _MainScreenState extends State<MainScreen> {
                 padding: EdgeInsets.only(bottom: 4, top: 4),
                 child: _tab == 0
                     ? Image.asset(
-                        "assets/images/tab_orders_on.png",
+                        "assets/images/tab_orders_off.png",
+                        color: Appcolors().green,
                         height: 24,
                       )
                     : Image.asset(
@@ -86,7 +87,8 @@ class _MainScreenState extends State<MainScreen> {
                 padding: EdgeInsets.only(bottom: 4, top: 4),
                 child: _tab == 1
                     ? Image.asset(
-                        "assets/images/tab_explore_on.png",
+                        "assets/images/tab_explore_off.png",
+                        color: Appcolors().green,
                         height: 24,
                       )
                     : Image.asset(
@@ -100,7 +102,8 @@ class _MainScreenState extends State<MainScreen> {
                 padding: EdgeInsets.only(bottom: 4, top: 4),
                 child: _tab == 2
                     ? Image.asset(
-                        "assets/images/tab_shop_on.png",
+                        "assets/images/tab_shop_off.png",
+                        color: Appcolors().green,
                         height: 24,
                       )
                     : Image.asset(
@@ -114,7 +117,8 @@ class _MainScreenState extends State<MainScreen> {
                 padding: EdgeInsets.only(bottom: 4, top: 4),
                 child: _tab == 3
                     ? Image.asset(
-                        "assets/images/tab_favorites_on.png",
+                        "assets/images/tab_favorites_off.png",
+                        color: Appcolors().green,
                         height: 24,
                       )
                     : Image.asset(
@@ -128,7 +132,8 @@ class _MainScreenState extends State<MainScreen> {
                 padding: EdgeInsets.only(bottom: 4, top: 4),
                 child: _tab == 4
                     ? Image.asset(
-                        "assets/images/tab_account_on.png",
+                        "assets/images/tab_account_off.png",
+                        color: Appcolors().green,
                         height: 24,
                       )
                     : Image.asset(
