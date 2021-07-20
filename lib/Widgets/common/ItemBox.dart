@@ -11,7 +11,14 @@ class ItemBox extends StatelessWidget {
   String description;
   int amount;
   double price;
-  ItemBox({this.id, this.title, this.description, this.amount, this.price});
+  String image;
+  ItemBox(
+      {this.id,
+      this.title,
+      this.description,
+      this.amount,
+      this.price,
+      this.image});
 
   final CartConroller cartConroller = Get.put(CartConroller());
 
@@ -39,7 +46,7 @@ class ItemBox extends StatelessWidget {
             children: [
               Center(
                 child: Image.asset(
-                  "assets/images/temp/item1.png",
+                  image,
                   width: 100,
                   height: 80,
                 ),
@@ -64,7 +71,7 @@ class ItemBox extends StatelessWidget {
                 children: [
                   Text(
                     "\$" + price.toString(),
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   GestureDetector(
                       child: Image.asset(
@@ -77,6 +84,7 @@ class ItemBox extends StatelessWidget {
                             title: title,
                             description: description,
                             amount: 1,
+                            image: image,
                             price: price));
                       })
                 ],
@@ -96,7 +104,9 @@ class ItemBox extends StatelessWidget {
                       animationType: null,
                       badgeContent: Center(
                         child: Text(
-                          controller.dataBox.getAt(id).amount.toString(),
+                          !controller.dataBox.containsKey(id)
+                              ? ""
+                              : controller.dataBox.get(id).amount.toString(),
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.white,

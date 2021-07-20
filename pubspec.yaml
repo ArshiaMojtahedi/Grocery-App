@@ -75,6 +75,12 @@ flutter:
     #TEMP
     - assets/images/temp/item1.png
     - assets/images/temp/item2.png
+    - assets/images/temp/item3.png
+    - assets/images/temp/item4.png
+    - assets/images/temp/item5.png
+    - assets/images/temp/item6.png
+    - assets/images/temp/item7.png
+
     - assets/images/temp/banner.png
     - assets/images/temp/category1.png
   # An image asset can refer to one or more resolution-specific "variants", see

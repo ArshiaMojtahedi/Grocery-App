@@ -38,6 +38,7 @@ class CartScreen extends StatelessWidget {
                           description: controller.dataBox.getAt(i).description,
                           amount: controller.dataBox.getAt(i).amount,
                           price: controller.dataBox.getAt(i).price,
+                          image: controller.dataBox.getAt(i).image,
                         ),
                       );
                     }),

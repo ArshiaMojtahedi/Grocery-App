@@ -3,14 +3,12 @@ import 'package:grocery_app/models/cartItem.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class CartConroller extends GetxController {
-  bool isLoading = true;
-  int id;
-
   Box<CartItem> dataBox;
 
   @override
   void onInit() {
     dataBox = Hive.box<CartItem>("cart");
+    // dataBox.clear();
 
     super.onInit();
   }
@@ -24,6 +22,7 @@ class CartConroller extends GetxController {
       CartItem newItem = CartItem(
           id: item.id,
           title: item.title,
+          image: item.image,
           description: item.description,
           price: item.price,
           amount: item.amount + 1);
@@ -37,6 +36,7 @@ class CartConroller extends GetxController {
     CartItem newItem = CartItem(
         id: item.id,
         title: item.title,
+        image: item.image,
         description: item.description,
         price: item.price,
         amount: item.amount + 1);
@@ -51,6 +51,7 @@ class CartConroller extends GetxController {
       CartItem newItem = CartItem(
           id: item.id,
           title: item.title,
+          image: item.image,
           description: item.description,
           price: item.price,
           amount: item.amount - 1);
@@ -67,8 +68,8 @@ class CartConroller extends GetxController {
     update();
   }
 
-  getAllItems() {
-    print(dataBox.getAt(id).title);
-    update();
-  }
+  // getAllItems() {
+  //   print(dataBox.getAt(id).title);
+  //   update();
+  // }
 }

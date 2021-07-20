@@ -9,7 +9,14 @@ class CartRowItem extends StatelessWidget {
   String description;
   int amount;
   double price;
-  CartRowItem({this.id, this.title, this.description, this.amount, this.price});
+  String image;
+  CartRowItem(
+      {this.id,
+      this.title,
+      this.description,
+      this.amount,
+      this.price,
+      this.image});
   @override
   Widget build(BuildContext context) {
     return GetBuilder<CartConroller>(builder: (controller) {
@@ -23,8 +30,9 @@ class CartRowItem extends StatelessWidget {
                 Row(
                   children: [
                     Image.asset(
-                      "assets/images/temp/item2.png",
+                      image,
                       height: 70,
+                      width: 70,
                     ),
                     SizedBox(
                       width: 24,
@@ -67,10 +75,13 @@ class CartRowItem extends StatelessWidget {
                             SizedBox(
                               width: 16,
                             ),
-                            Text(
-                              amount.toString(),
-                              style: TextStyle(
-                                  fontSize: 16, color: Appcolors().textColor2),
+                            Container(
+                              child: Text(
+                                amount.toString(),
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: Appcolors().textColor2),
+                              ),
                             ),
                             SizedBox(
                               width: 16,

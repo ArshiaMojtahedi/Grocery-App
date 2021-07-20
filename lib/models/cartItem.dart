@@ -14,6 +14,14 @@ class CartItem extends HiveObject {
   final double price;
   @HiveField(4)
   final int amount;
+  @HiveField(5)
+  final String image;
 
-  CartItem({this.id, this.title, this.description, this.price, this.amount});
+  CartItem(
+      {this.id,
+      this.title,
+      this.description,
+      this.price,
+      this.amount,
+      this.image});
 }
