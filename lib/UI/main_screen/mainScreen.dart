@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/UI/categories/caregoriesScreen.dart';
+import 'package:grocery_app/UI/favorites/favoritesScreen.dart';
 import 'package:grocery_app/UI/home/homeScreen.dart';
 import 'package:grocery_app/Utils/colors.dart';
 
@@ -37,7 +38,7 @@ class _MainScreenState extends State<MainScreen> {
           new HomeScreen(),
           new CategoriesScreen(),
           new HomeScreen(),
-          new HomeScreen(),
+          new FavoritesScreen(),
           new HomeScreen(),
         ],
       ),

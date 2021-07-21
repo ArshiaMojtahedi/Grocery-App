@@ -124,7 +124,7 @@ class ItemBox extends StatelessWidget {
                             ),
                           ),
                         ),
-                        badgeColor: Colors.orange[900],
+                        badgeColor: Appcolors().darkOrange,
                       ),
                     )
                   : Container();

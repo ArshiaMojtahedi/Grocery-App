@@ -7,6 +7,7 @@ import 'package:grocery_app/UI/main_screen/mainScreen.dart';
 import 'package:grocery_app/UI/product/productDetailScreen.dart';
 import 'package:grocery_app/Utils/colors.dart';
 import 'package:grocery_app/models/cartItem.dart';
+import 'package:grocery_app/models/favoriteItem.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
@@ -22,7 +23,10 @@ main() async {
   final document = await getApplicationDocumentsDirectory();
   Hive.init(document.path);
   Hive.registerAdapter(CartItemAdapter());
+  Hive.registerAdapter(FavoriteItemAdapter());
+
   await Hive.openBox<CartItem>("cart");
+  await Hive.openBox<FavoriteItem>("favorites");
 
   runApp(MyApp());
 }

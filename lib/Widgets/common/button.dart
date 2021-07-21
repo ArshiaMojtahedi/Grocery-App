@@ -6,8 +6,10 @@ class AppRaiseButton extends StatelessWidget {
   String label;
   double height;
   double width;
+  Color color;
 
-  AppRaiseButton({this.function, this.label, this.height, this.width});
+  AppRaiseButton(
+      {this.function, this.label, this.height, this.width, this.color});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,7 +25,7 @@ class AppRaiseButton extends StatelessWidget {
           ),
         ),
         onPressed: function,
-        color: Appcolors().green,
+        color: color ?? Appcolors().green,
         shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(25.0)),
       ),

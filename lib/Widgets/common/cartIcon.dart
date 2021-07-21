@@ -2,6 +2,7 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/Controllers/cartController.dart';
+import 'package:grocery_app/Utils/colors.dart';
 
 class CartIcon extends StatelessWidget {
   final CartConroller cartConroller = Get.put(CartConroller());
@@ -10,7 +11,7 @@ class CartIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<CartConroller>(builder: (controller) {
       return Badge(
-          // showBadge: false,
+          showBadge: cartConroller.dataBox.length == 0 ? false : true,
           animationType: BadgeAnimationType.slide,
           badgeContent: Text(
             cartConroller.dataBox.length.toString(),
@@ -19,7 +20,7 @@ class CartIcon extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          badgeColor: Colors.orange[900],
+          badgeColor: Appcolors().darkOrange,
           padding: EdgeInsets.only(top: 7, right: 6, left: 6, bottom: 6),
           position: BadgePosition(bottom: 10, start: 18),
           child: GestureDetector(
