@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/Controllers/cartController.dart';
+import 'package:grocery_app/Controllers/favoriteController.dart';
 import 'package:grocery_app/Controllers/productController.dart';
 import 'package:grocery_app/UI/cart/widgets/cartItem.dart';
 import 'package:grocery_app/Utils/colors.dart';
@@ -8,10 +9,13 @@ import 'package:grocery_app/Widgets/common/appbar.dart';
 import 'package:grocery_app/Widgets/common/appbarLayout.dart';
 import 'package:grocery_app/Widgets/common/button.dart';
 import 'package:grocery_app/models/cartItem.dart';
+import 'package:grocery_app/models/favoriteItem.dart';
 import 'package:grocery_app/models/product.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   final CartConroller cartConroller = Get.put(CartConroller());
+  final FavoriteController favoriteController = Get.put(FavoriteController());
+
   Product product = Product(
     id: 100,
     title: "Mowz",
@@ -70,10 +74,26 @@ class ProductDetailScreen extends StatelessWidget {
                                       fontSize: 24,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                Image.asset(
-                                  "assets/images/heart_outline_icon.png",
-                                  height: 24,
-                                )
+                                GetBuilder<FavoriteController>(
+                                    builder: (controller2) {
+                                  return InkWell(
+                                    child: Image.asset(
+                                        controller2.itemExist(product.id)
+                                            ? "assets/images/heart_filled_icon.png"
+                                            : "assets/images/heart_outline_icon.png",
+                                        height: 24,
+                                        color: Appcolors().green),
+                                    onTap: () => controller2
+                                            .itemExist(product.id)
+                                        ? controller2.removeItem(product.id)
+                                        : controller2.addItem(FavoriteItem(
+                                            id: product.id,
+                                            title: product.title,
+                                            description: product.description,
+                                            image: product.image,
+                                            price: product.price)),
+                                  );
+                                })
                               ],
                             ),
                             SizedBox(

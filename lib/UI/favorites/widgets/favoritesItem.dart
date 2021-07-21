@@ -35,10 +35,10 @@ class FavoritesRowItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          width: 160,
+                          width: 150,
                           child: Text(
                             title,
-                            style: TextStyle(fontSize: 16),
+                            style: TextStyle(fontSize: 18),
                           ),
                         ),
                         SizedBox(
@@ -47,10 +47,7 @@ class FavoritesRowItem extends StatelessWidget {
                         Text(
                           description,
                           style: TextStyle(
-                              fontSize: 12, color: Appcolors().textColor2),
-                        ),
-                        SizedBox(
-                          height: 16,
+                              fontSize: 14, color: Appcolors().textColor2),
                         ),
                       ],
                     ),
@@ -59,8 +56,20 @@ class FavoritesRowItem extends StatelessWidget {
                     // ),
                   ],
                 ),
-                Text("\$" + price.toString(),
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
+                Row(
+                  children: [
+                    Text("\$" + price.toString(),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold)),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Image.asset(
+                      "assets/images/right_arrow_icon.png",
+                      height: 14,
+                    ),
+                  ],
+                )
               ],
             ),
             SizedBox(
