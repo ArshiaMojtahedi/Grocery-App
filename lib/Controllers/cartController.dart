@@ -83,6 +83,14 @@ class CartConroller extends GetxController {
     }
   }
 
+  double getTotal() {
+    double total = 0;
+    for (int i = 0; i < dataBox.length; i++) {
+      total += dataBox.getAt(i).amount * dataBox.getAt(i).price;
+    }
+    return total;
+  }
+
   // getAllItems() {
   //   print(dataBox.getAt(id).title);
   //   update();
