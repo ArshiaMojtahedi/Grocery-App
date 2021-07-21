@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:get/get.dart';
+import 'package:grocery_app/UI/account/accountScreen.dart';
 import 'package:grocery_app/UI/categories/caregoriesScreen.dart';
 import 'package:grocery_app/UI/favorites/favoritesScreen.dart';
 import 'package:grocery_app/UI/home/homeScreen.dart';
+import 'package:grocery_app/UI/orders/ordersScreen.dart';
 import 'package:grocery_app/Utils/colors.dart';
 
 class MainScreen extends StatefulWidget {
@@ -35,11 +37,11 @@ class _MainScreenState extends State<MainScreen> {
         controller: _tabController,
         onPageChanged: onTabChanged,
         children: <Widget>[
-          new HomeScreen(),
+          new OrdersScreen(),
           new CategoriesScreen(),
           new HomeScreen(),
           new FavoritesScreen(),
-          new HomeScreen(),
+          new AccountScreen(),
         ],
       ),
       bottomNavigationBar: SnakeNavigationBar.color(

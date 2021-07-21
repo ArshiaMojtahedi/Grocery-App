@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/Utils/colors.dart';
 import 'package:grocery_app/models/categoryItem.dart';
+import 'package:grocery_app/models/subCategoryItem.dart';
 
-class CategoryItem extends StatelessWidget {
-  Category category;
-  CategoryItem({this.category});
+class CategoryRowItem extends StatelessWidget {
+  SubCategory subCategory;
+  CategoryRowItem({this.subCategory});
 
   @override
   Widget build(BuildContext context) {
@@ -14,38 +15,38 @@ class CategoryItem extends StatelessWidget {
       child: Container(
         width: 173,
         padding: EdgeInsets.only(
-          top: 24,
-          left: 15,
-          right: 15,
-          bottom: 16,
+          top: 8,
+          left: 16,
+          right: 16,
+          bottom: 8,
         ),
         decoration: BoxDecoration(
-          border: Border.all(
-            width: 0.8,
-            color: Color(
-              int.parse("0xff" + category.color),
-            ),
-          ),
-          color: Color(int.parse("0xff" + category.color)).withOpacity(0.10),
+          // border: Border.all(
+          //   width: 0.8,
+          //   color: Color(
+          //     int.parse("0xff" + subCategory.color),
+          //   ),
+          // ),
+          color: Color(int.parse("0xff" + subCategory.color)).withOpacity(0.10),
           borderRadius: BorderRadius.all(Radius.circular(18)),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: [
             Center(
               child: Image.asset(
-                category.image,
-                width: 100,
-                height: 80,
+                subCategory.image,
+                width: 71,
+                height: 71,
               ),
             ),
             SizedBox(
-              height: 24,
+              width: 24,
             ),
             Center(
               child: Text(
-                category.title,
+                subCategory.title,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),

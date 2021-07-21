@@ -12,7 +12,7 @@ class SimpleAppBar extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 24, right: 24, top: 16),
+          padding: const EdgeInsets.only(left: 24, right: 24),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -33,27 +33,7 @@ class SimpleAppBar extends StatelessWidget {
                   fontSize: 21,
                 ),
               ),
-              Badge(
-                // showBadge: false,
-                animationType: BadgeAnimationType.slide,
-                badgeContent: Text(
-                  "10",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.white,
-                  ),
-                ),
-                badgeColor: Colors.orange[900],
-                padding: EdgeInsets.only(top: 7, right: 6, left: 6, bottom: 6),
-                position: BadgePosition(bottom: 10, start: 18),
-                child: GestureDetector(
-                  onTap: () => Get.toNamed("/cart"),
-                  child: Image.asset(
-                    "assets/images/tab_cart_off.png",
-                    height: 25,
-                  ),
-                ),
-              ),
+              CartIcon(),
             ],
           ),
         ),

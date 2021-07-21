@@ -7,6 +7,7 @@ import 'package:grocery_app/Widgets/common/ItemBox.dart';
 import 'package:grocery_app/Widgets/common/appbar.dart';
 import 'package:grocery_app/Widgets/common/appbarLayout.dart';
 import 'package:grocery_app/Widgets/common/searchBar.dart';
+import 'package:grocery_app/models/categoryItem.dart';
 
 class CategoriesScreen extends StatelessWidget {
   @override
@@ -39,7 +40,11 @@ class CategoriesScreen extends StatelessWidget {
                             mainAxisSpacing: 12),
                         itemCount: 10,
                         itemBuilder: (BuildContext context, int index) {
-                          return CategoryItem();
+                          return CategoryItem(
+                              category: Category(
+                                  title: "kooft and filan",
+                                  image: "assets/images/temp/category1.png",
+                                  color: "53B175"));
                         }),
                   ),
                 ],

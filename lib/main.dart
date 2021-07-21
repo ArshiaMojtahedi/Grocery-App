@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:grocery_app/UI/cart/cartScreen.dart';
+import 'package:grocery_app/UI/categories/subCategoriesScreen.dart';
 import 'package:grocery_app/UI/main_screen/mainScreen.dart';
 import 'package:grocery_app/UI/product/productDetailScreen.dart';
 import 'package:grocery_app/Utils/colors.dart';
@@ -51,6 +52,9 @@ class MyApp extends StatelessWidget {
 
         //Product
         GetPage(name: '/productDetail', page: () => (ProductDetailScreen())),
+
+        //Categories
+        GetPage(name: '/subCategories', page: () => (SubCategoriesScreen())),
       ],
     );
   }
