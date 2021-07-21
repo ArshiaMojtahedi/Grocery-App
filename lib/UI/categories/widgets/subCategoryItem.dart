@@ -11,7 +11,7 @@ class CategoryRowItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Get.toNamed("/subCategories"),
+      onTap: () => Get.toNamed("/category", arguments: subCategory.title),
       child: Container(
         width: 173,
         padding: EdgeInsets.only(

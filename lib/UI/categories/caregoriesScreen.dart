@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/UI/categories/widgets/categoryItem.dart';
 import 'package:grocery_app/UI/home/widgets/horizentalItemList.dart';
 import 'package:grocery_app/Utils/colors.dart';
+import 'package:grocery_app/Utils/tempData.dart';
 import 'package:grocery_app/Widgets/common/ItemBox.dart';
 import 'package:grocery_app/Widgets/common/appbar.dart';
 import 'package:grocery_app/Widgets/common/appbarLayout.dart';
@@ -21,34 +22,41 @@ class CategoriesScreen extends StatelessWidget {
             ),
           ),
           body: Container(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 8,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 8,
+                ),
+                SearchBar(),
+                SizedBox(
+                  height: 8,
+                ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(16),
+                          child: GridView.builder(
+                              physics: ScrollPhysics(),
+                              shrinkWrap: true,
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 2,
+                                      childAspectRatio: (5 / 6),
+                                      crossAxisSpacing: 12,
+                                      mainAxisSpacing: 12),
+                              itemCount: TempData().categories.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                return CategoryItem(
+                                    category: TempData().categories[index]);
+                              }),
+                        ),
+                      ],
+                    ),
                   ),
-                  SearchBar(),
-                  Padding(
-                    padding: EdgeInsets.all(16),
-                    child: GridView.builder(
-                        physics: ScrollPhysics(),
-                        shrinkWrap: true,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: (5 / 6),
-                            crossAxisSpacing: 12,
-                            mainAxisSpacing: 12),
-                        itemCount: 10,
-                        itemBuilder: (BuildContext context, int index) {
-                          return CategoryItem(
-                              category: Category(
-                                  title: "kooft and filan",
-                                  image: "assets/images/temp/category1.png",
-                                  color: "53B175"));
-                        }),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

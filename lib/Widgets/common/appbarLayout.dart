@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AppBarLayout extends PreferredSize {
   final Widget child;
-  final double height;
+  final double height =
+      (GetPlatform.isAndroid) ? kToolbarHeight + 16 : kToolbarHeight;
 
-  AppBarLayout({@required this.child, this.height = kToolbarHeight});
+  AppBarLayout({@required this.child});
 
   @override
   Size get preferredSize => Size.fromHeight(height);

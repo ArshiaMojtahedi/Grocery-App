@@ -29,7 +29,10 @@ class HorizentalItemList extends StatelessWidget {
         ),
         Container(
           height: 250,
-          child: ListView.builder(
+          child: ListView.separated(
+            separatorBuilder: (ctx, i) => SizedBox(
+              width: 16,
+            ),
             padding: EdgeInsets.only(left: 16, right: 16),
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,

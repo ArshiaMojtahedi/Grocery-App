@@ -7,12 +7,15 @@ import 'cartIcon.dart';
 class SimpleAppBar extends StatelessWidget {
   String title;
   SimpleAppBar({this.title});
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 24, right: 24),
+          padding: (GetPlatform.isAndroid)
+              ? const EdgeInsets.only(left: 24, right: 24, top: 16)
+              : const EdgeInsets.only(left: 24, right: 24),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -51,7 +54,9 @@ class MainAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+      padding: (GetPlatform.isAndroid)
+          ? EdgeInsets.only(left: 24, right: 24, top: 32, bottom: 16)
+          : const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -75,7 +80,9 @@ class HomeAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+      padding: (GetPlatform.isAndroid)
+          ? EdgeInsets.only(left: 24, right: 24, top: 32, bottom: 16)
+          : const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -120,7 +127,9 @@ class CartAppBar extends StatelessWidget {
         //   height: 8,
         // ),
         Padding(
-          padding: const EdgeInsets.only(left: 24, right: 24),
+          padding: (GetPlatform.isAndroid)
+              ? const EdgeInsets.only(left: 24, right: 24, top: 16)
+              : const EdgeInsets.only(left: 24, right: 24),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -157,7 +166,11 @@ class ProductDetailAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 24),
+      padding: (GetPlatform.isAndroid)
+          ? const EdgeInsets.only(left: 24, top: 16)
+          : const EdgeInsets.only(
+              left: 24,
+            ),
       color: Colors.white,
       width: double.infinity,
       child: Container(

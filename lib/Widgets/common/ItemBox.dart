@@ -26,7 +26,7 @@ class ItemBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.toNamed("/productDetail"),
+      onTap: () => Get.toNamed("/productDetail", arguments: id),
       child: Stack(
         children: [
           Container(
@@ -38,7 +38,6 @@ class ItemBox extends StatelessWidget {
               right: 15,
               bottom: 16,
             ),
-            margin: EdgeInsets.only(right: 16),
             decoration: BoxDecoration(
               border: Border.all(color: Color(0xffE2E2E2)),
               borderRadius: BorderRadius.all(Radius.circular(18)),
@@ -105,7 +104,7 @@ class ItemBox extends StatelessWidget {
           ),
           Positioned(
             top: 10,
-            right: 27,
+            left: 10,
             child: GetBuilder<CartConroller>(builder: (controller) {
               return controller.dataBox.containsKey(id)
                   ? Container(

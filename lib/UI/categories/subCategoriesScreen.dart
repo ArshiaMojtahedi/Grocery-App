@@ -25,33 +25,42 @@ class SubCategoriesScreen extends StatelessWidget {
             ),
           ),
           body: Container(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 16,
-                  ),
-                  SearchBar(),
-                  Container(
-                    padding: EdgeInsets.symmetric(vertical: 16),
-                    child: GetBuilder<SubCategoriesConreoller>(
-                        builder: (controller) {
-                      return ListView.separated(
-                        separatorBuilder: (ctx, i) => SizedBox(
-                          height: 8,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 16,
+                ),
+                SearchBar(),
+                SizedBox(
+                  height: 8,
+                ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(vertical: 16),
+                          child: GetBuilder<SubCategoriesConreoller>(
+                              builder: (controller) {
+                            return ListView.separated(
+                              separatorBuilder: (ctx, i) => SizedBox(
+                                height: 8,
+                              ),
+                              padding: EdgeInsets.only(left: 16, right: 16),
+                              shrinkWrap: true,
+                              physics: NeverScrollableScrollPhysics(),
+                              itemCount: controller.subCategories.length,
+                              itemBuilder: (ctx, i) => CategoryRowItem(
+                                subCategory: controller.subCategories[i],
+                              ),
+                            );
+                          }),
                         ),
-                        padding: EdgeInsets.only(left: 16, right: 16),
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                        itemCount: controller.subCategories.length,
-                        itemBuilder: (ctx, i) => CategoryRowItem(
-                          subCategory: controller.subCategories[i],
-                        ),
-                      );
-                    }),
+                      ],
+                    ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
