@@ -26,21 +26,21 @@ class TempData {
     CartItem(
         id: 107,
         title: "Yomorta",
-        description: "4pcs",
+        description: "4 pcs",
         amount: 1,
         price: 1.5,
         image: "assets/images/temp/item7.png"),
     CartItem(
         id: 104,
         title: "Nooshaba Coca",
-        description: "350ml",
+        description: "350 ml",
         amount: 1,
         price: 5,
         image: "assets/images/temp/item4.png"),
     CartItem(
         id: 105,
         title: "Nooshaba Pepsi",
-        description: "350ml",
+        description: "350 ml",
         amount: 1,
         price: 5,
         image: "assets/images/temp/item5.png")

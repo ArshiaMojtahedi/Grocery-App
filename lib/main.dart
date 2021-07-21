@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:grocery_app/UI/cart/cartScreen.dart';
 import 'package:grocery_app/UI/main_screen/mainScreen.dart';
+import 'package:grocery_app/UI/product/productDetailScreen.dart';
 import 'package:grocery_app/Utils/colors.dart';
 import 'package:grocery_app/models/cartItem.dart';
 import 'package:hive/hive.dart';
@@ -43,6 +44,9 @@ class MyApp extends StatelessWidget {
 
         //Cart
         GetPage(name: '/cart', page: () => (CartScreen())),
+
+        //Product
+        GetPage(name: '/productDetail', page: () => (ProductDetailScreen())),
       ],
     );
   }

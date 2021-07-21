@@ -84,27 +84,7 @@ class MainAppbar extends StatelessWidget {
               fontSize: 21,
             ),
           ),
-          Badge(
-            // showBadge: false,
-            animationType: BadgeAnimationType.slide,
-            badgeContent: Text(
-              "10",
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.white,
-              ),
-            ),
-            badgeColor: Colors.orange[900],
-            padding: EdgeInsets.only(top: 7, right: 6, left: 6, bottom: 6),
-            position: BadgePosition(bottom: 10, start: 18),
-            child: GestureDetector(
-              onTap: () => Get.toNamed("/cart"),
-              child: Image.asset(
-                "assets/images/tab_cart_off.png",
-                height: 25,
-              ),
-            ),
-          ),
+          CartIcon(),
         ],
       ),
     );
@@ -189,6 +169,29 @@ class CartAppBar extends StatelessWidget {
           thickness: 1.5,
         ),
       ],
+    );
+  }
+}
+
+class ProductDetailAppbar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(left: 24),
+      color: Colors.white,
+      width: double.infinity,
+      child: Container(
+        alignment: Alignment.centerLeft,
+        width: 25,
+        child: IconButton(
+            padding: EdgeInsets.zero,
+            alignment: Alignment.centerLeft,
+            icon: Image.asset(
+              "assets/images/back_arrow_icon.png",
+              height: 20,
+            ),
+            onPressed: () => Get.back()),
+      ),
     );
   }
 }

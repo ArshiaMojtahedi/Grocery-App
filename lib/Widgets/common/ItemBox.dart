@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:grocery_app/Controllers/cartController.dart';
 import 'package:grocery_app/Utils/colors.dart';
 import 'package:grocery_app/models/cartItem.dart';
+import 'package:grocery_app/models/product.dart';
 
 class ItemBox extends StatelessWidget {
   int id;
@@ -24,102 +25,113 @@ class ItemBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          height: 249,
-          width: 173,
-          padding: EdgeInsets.only(
-            top: 24,
-            left: 15,
-            right: 15,
-            bottom: 16,
-          ),
-          margin: EdgeInsets.only(right: 16),
-          decoration: BoxDecoration(
-            border: Border.all(color: Color(0xffE2E2E2)),
-            borderRadius: BorderRadius.all(Radius.circular(18)),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Center(
-                child: Image.asset(
-                  image,
-                  width: 100,
-                  height: 80,
-                ),
-              ),
-              SizedBox(
-                height: 24,
-              ),
-              Text(
-                title,
-                style: TextStyle(fontSize: 16),
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Text(
-                description,
-                style: TextStyle(fontSize: 12, color: Appcolors().textColor2),
-              ),
-              Spacer(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "\$" + price.toString(),
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+    return GestureDetector(
+      onTap: () => Get.toNamed("/productDetail"),
+      child: Stack(
+        children: [
+          Container(
+            height: 249,
+            width: 173,
+            padding: EdgeInsets.only(
+              top: 24,
+              left: 15,
+              right: 15,
+              bottom: 16,
+            ),
+            margin: EdgeInsets.only(right: 16),
+            decoration: BoxDecoration(
+              border: Border.all(color: Color(0xffE2E2E2)),
+              borderRadius: BorderRadius.all(Radius.circular(18)),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Center(
+                  child: Image.asset(
+                    image,
+                    width: 100,
+                    height: 80,
                   ),
-                  GestureDetector(
-                      child: Image.asset(
-                        "assets/images/add_to_cart_icon.png",
-                        height: 45,
+                ),
+                SizedBox(
+                  height: 24,
+                ),
+                Text(
+                  title,
+                  style: TextStyle(fontSize: 16),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  description,
+                  style: TextStyle(fontSize: 12, color: Appcolors().textColor2),
+                ),
+                Spacer(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "\$" + price.toString(),
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    Container(
+                      height: 45,
+                      width: 45,
+                      child: RaisedButton(
+                        elevation: 0,
+                        child: Image.asset("assets/images/increase_icon.png",
+                            color: Colors.white),
+                        onPressed: () {
+                          cartConroller.addItem(CartItem(
+                              id: id,
+                              title: title,
+                              description: description,
+                              amount: 1,
+                              image: image,
+                              price: price));
+                        },
+                        color: Appcolors().green,
+                        shape: new RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(17.0)),
                       ),
-                      onTap: () {
-                        cartConroller.addItem(CartItem(
-                            id: id,
-                            title: title,
-                            description: description,
-                            amount: 1,
-                            image: image,
-                            price: price));
-                      })
-                ],
-              )
-            ],
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
-        ),
-        Positioned(
-          top: 10,
-          right: 27,
-          child: GetBuilder<CartConroller>(builder: (controller) {
-            return controller.dataBox.containsKey(id)
-                ? Container(
-                    height: 25,
-                    width: 25,
-                    child: Badge(
-                      animationType: null,
-                      badgeContent: Center(
-                        child: Text(
-                          !controller.dataBox.containsKey(id)
-                              ? ""
-                              : controller.dataBox.get(id).amount.toString(),
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.white,
+          Positioned(
+            top: 10,
+            right: 27,
+            child: GetBuilder<CartConroller>(builder: (controller) {
+              return controller.dataBox.containsKey(id)
+                  ? Container(
+                      height: 25,
+                      width: 25,
+                      child: Badge(
+                        animationType: null,
+                        badgeContent: Center(
+                          child: Text(
+                            !controller.dataBox.containsKey(id)
+                                ? ""
+                                : controller.dataBox.get(id).amount.toString(),
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
+                        badgeColor: Colors.orange[900],
                       ),
-                      badgeColor: Colors.orange[900],
-                    ),
-                  )
-                : Container();
-          }),
-        ),
-      ],
+                    )
+                  : Container();
+            }),
+          ),
+        ],
+      ),
     );
   }
 }

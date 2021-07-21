@@ -71,6 +71,9 @@ flutter:
     - assets/images/increase_icon.png
     - assets/images/back_arrow_icon.png
     - assets/images/close_icon.png
+    - assets/images/heart_filled_icon.png
+    - assets/images/heart_outline_icon.png
+
 
     #TEMP
     - assets/images/temp/item1.png
