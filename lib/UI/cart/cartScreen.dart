@@ -108,10 +108,13 @@ class EmptyCartContainer extends StatelessWidget {
           SizedBox(
             height: 8,
           ),
-          Text(
-            "You can browse out shop and add items to your shopping cart.",
-            style: TextStyle(fontSize: 16, color: Appcolors().textColor2),
-            textAlign: TextAlign.center,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              "You can browse out shop and add items to your shopping cart.",
+              style: TextStyle(fontSize: 16, color: Appcolors().textColor2),
+              textAlign: TextAlign.center,
+            ),
           ),
           SizedBox(
             height: 32,

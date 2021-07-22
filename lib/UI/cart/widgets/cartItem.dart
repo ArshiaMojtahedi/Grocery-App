@@ -29,10 +29,13 @@ class CartRowItem extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Image.asset(
-                      image,
-                      height: 70,
-                      width: 70,
+                    GestureDetector(
+                      onTap: () => Get.toNamed("/productDetail", arguments: id),
+                      child: Image.asset(
+                        image,
+                        height: 70,
+                        width: 70,
+                      ),
                     ),
                     SizedBox(
                       width: 24,
