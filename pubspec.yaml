@@ -32,6 +32,7 @@ dependencies:
   hive: ^2.0.4
   hive_flutter: ^1.1.0
   path_provider: ^2.0.2
+  uuid: ^3.0.4
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,10 @@ flutter:
     - assets/images/right_arrow_icon.png
     - assets/images/filter_icon.png
     - assets/images/splash_logo.png
+    - assets/images/bg.png
+    - assets/images/order_success_artwork.png
+
+
 
     #TEMP
     - assets/images/temp/item1.png

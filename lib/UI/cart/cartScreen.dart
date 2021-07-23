@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/Controllers/cartController.dart';
 import 'package:grocery_app/UI/cart/widgets/cartItem.dart';
+import 'package:grocery_app/UI/orders/addOrderScreen.dart';
 import 'package:grocery_app/Utils/colors.dart';
 import 'package:grocery_app/Widgets/common/appbar.dart';
 import 'package:grocery_app/Widgets/common/appbarLayout.dart';
@@ -57,10 +58,14 @@ class CartScreen extends StatelessWidget {
                     child: Container(
                       padding: EdgeInsets.all(16),
                       child: CheckoutButton(
-                          height: 60,
-                          label: "Proceed To Chekout",
-                          total: controller.getTotal().toString(),
-                          function: () {}),
+                        height: 60,
+                        label: "Proceed To Chekout",
+                        total: controller.getTotal().toString(),
+                        function: () => Get.bottomSheet(
+                          AddOrderScreen(),
+                          isScrollControlled: true,
+                        ),
+                      ),
                     ),
                     elevation: 0,
                   )

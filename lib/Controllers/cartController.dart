@@ -67,6 +67,11 @@ class CartConroller extends GetxController {
     update();
   }
 
+  removeAll() {
+    dataBox.clear();
+    update();
+  }
+
   bool itemExist(int id) {
     if (dataBox.containsKey(id)) {
       return true;
@@ -91,8 +96,13 @@ class CartConroller extends GetxController {
     return total;
   }
 
-  // getAllItems() {
-  //   print(dataBox.getAt(id).title);
-  //   update();
-  // }
+  List<CartItem> getItemList() {
+    List<CartItem> items = [];
+    for (int i = 0; i < dataBox.length; i++) {
+      items.add(dataBox.getAt(i));
+
+      print(dataBox.getAt(i).title);
+    }
+    return items;
+  }
 }
