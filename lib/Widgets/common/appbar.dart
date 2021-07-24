@@ -55,8 +55,8 @@ class MainAppbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: (GetPlatform.isAndroid)
-          ? EdgeInsets.only(left: 24, right: 24, top: 32, bottom: 16)
-          : const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          ? EdgeInsets.only(left: 24, right: 24, top: 16, bottom: 16)
+          : const EdgeInsets.only(left: 24, right: 24, bottom: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -81,8 +81,8 @@ class HomeAppbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: (GetPlatform.isAndroid)
-          ? EdgeInsets.only(left: 24, right: 24, top: 32, bottom: 16)
-          : const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          ? EdgeInsets.only(left: 24, right: 24, top: 16, bottom: 16)
+          : const EdgeInsets.only(left: 24, right: 24, bottom: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

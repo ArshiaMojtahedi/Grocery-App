@@ -29,7 +29,7 @@ class OrderRowItem extends StatelessWidget {
                     maxLines: 1,
                     style: TextStyle(
                         fontSize: 14,
-                        color: Appcolors().textColor1,
+                        color: Appcolors().textColor3,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -74,7 +74,7 @@ class StatusBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: EdgeInsets.symmetric(vertical: 16),
       decoration: BoxDecoration(
         color: Color(0xffF2F2F2),
         borderRadius: BorderRadius.all(

@@ -37,43 +37,53 @@ class OrderDetailScreen extends StatelessWidget {
                             "Order -#" + controller.item.id,
                             style: TextStyle(
                                 fontSize: 14,
-                                color: Appcolors().textColor1,
+                                color: Appcolors().textColor3,
                                 fontWeight: FontWeight.bold),
                           ),
                           SizedBox(
                             height: 16,
                           ),
-                          StatusBox(),
+                          // StatusBox(),
+                          StatusTextRow(
+                            label: "Status: ",
+                            text: "Ready To Ship",
+                          ),
                           SizedBox(
-                            height: 16,
+                            height: 8,
                           ),
                           StatusTextRow(
                             label: "Date: ",
                             text: dateConvert(controller.item.dateCreated),
                           ),
                           SizedBox(
-                            height: 4,
+                            height: 8,
                           ),
                           StatusTextRow(
                             label: "Address: ",
                             text: "Filan Street, Filan Blv, No 2.",
                           ),
                           SizedBox(
-                            height: 4,
+                            height: 8,
                           ),
                           StatusTextRow(
                             label: "Payment Type: ",
                             text: "Credit Card",
                           ),
                           SizedBox(
-                            height: 4,
+                            height: 8,
                           ),
                           StatusTextRow(
                             label: "Total Price: ",
                             text: "\$" + controller.item.total.toString(),
                           ),
                           SizedBox(
-                            height: 24,
+                            height: 16,
+                          ),
+                          Divider(
+                            thickness: 1.2,
+                          ),
+                          SizedBox(
+                            height: 16,
                           ),
                           Text(
                             "Items",
@@ -119,16 +129,16 @@ class StatusTextRow extends StatelessWidget {
         Text(
           label,
           style: TextStyle(
-            fontSize: 14,
-            color: Appcolors().textColor2,
-          ),
+              fontSize: 14,
+              color: Appcolors().textColor2,
+              fontWeight: FontWeight.bold),
         ),
         Text(
           text,
           style: TextStyle(
-            fontSize: 14,
-            color: Appcolors().textColor1,
-          ),
+              fontSize: 14,
+              color: Appcolors().textColor1,
+              fontWeight: FontWeight.bold),
         ),
       ],
     );
