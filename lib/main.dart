@@ -6,6 +6,7 @@ import 'package:grocery_app/UI/cart/cartScreen.dart';
 import 'package:grocery_app/UI/categories/categoryDetailScreen.dart';
 import 'package:grocery_app/UI/categories/subCategoriesScreen.dart';
 import 'package:grocery_app/UI/main_screen/mainScreen.dart';
+import 'package:grocery_app/UI/orders/orderDetailScreen.dart';
 import 'package:grocery_app/UI/orders/orderSuccessScreen.dart';
 import 'package:grocery_app/UI/product/productDetailScreen.dart';
 import 'package:grocery_app/Utils/colors.dart';
@@ -64,6 +65,7 @@ class MyApp extends StatelessWidget {
 
         //Orders
         GetPage(name: '/orderSuccess', page: () => (OrderSuccessScreen())),
+        GetPage(name: '/orderDetail', page: () => (OrderDetailScreen())),
       ],
     );
   }

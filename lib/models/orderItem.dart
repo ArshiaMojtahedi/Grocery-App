@@ -23,6 +23,8 @@ class OrderItem extends HiveObject {
   final int paymentType;
   @HiveField(8)
   final int status;
+  @HiveField(9)
+  final DateTime dateCreated;
 
   OrderItem(
       {this.id,
@@ -33,5 +35,6 @@ class OrderItem extends HiveObject {
       this.shippingType,
       this.promoCode,
       this.paymentType,
+      this.dateCreated,
       this.status});
 }

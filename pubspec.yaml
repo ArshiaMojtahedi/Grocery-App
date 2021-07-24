@@ -31,6 +31,7 @@ dependencies:
   get_storage: ^2.0.2
   hive: ^2.0.4
   hive_flutter: ^1.1.0
+  intl: ^0.17.0
   path_provider: ^2.0.2
   uuid: ^3.0.4
 
@@ -78,8 +79,8 @@ flutter:
     - assets/images/splash_logo.png
     - assets/images/bg.png
     - assets/images/order_success_artwork.png
-
-
+    - assets/images/status_icon.png
+    - assets/images/status_inprogress_icon.png
 
     #TEMP
     - assets/images/temp/item1.png

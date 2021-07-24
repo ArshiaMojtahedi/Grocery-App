@@ -19,6 +19,7 @@ class AddOrderScreen extends StatelessWidget {
       promoCode: null,
       shippingType: 1,
       status: 0,
+      dateCreated: DateTime.now(),
       total: cartConroller.getTotal(),
       items: cartConroller.getItemList(),
     );

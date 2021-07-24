@@ -25,6 +25,7 @@ class OrderItemAdapter extends TypeAdapter<OrderItem> {
       shippingType: fields[5] as int,
       promoCode: fields[6] as String,
       paymentType: fields[7] as int,
+      dateCreated: fields[9] as DateTime,
       status: fields[8] as int,
     );
   }
@@ -32,7 +33,7 @@ class OrderItemAdapter extends TypeAdapter<OrderItem> {
   @override
   void write(BinaryWriter writer, OrderItem obj) {
     writer
-      ..writeByte(9)
+      ..writeByte(10)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -50,7 +51,9 @@ class OrderItemAdapter extends TypeAdapter<OrderItem> {
       ..writeByte(7)
       ..write(obj.paymentType)
       ..writeByte(8)
-      ..write(obj.status);
+      ..write(obj.status)
+      ..writeByte(9)
+      ..write(obj.dateCreated);
   }
 
   @override
