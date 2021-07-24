@@ -62,6 +62,7 @@ class MainAppbar extends StatelessWidget {
         children: [
           SizedBox(
             width: 25,
+            height: 40,
           ),
           Text(
             title,
@@ -88,27 +89,28 @@ class HomeAppbar extends StatelessWidget {
         children: [
           SizedBox(
             width: 25,
+            height: 40,
           ),
           Row(
             children: [
               Image.asset(
                 "assets/images/logo.png",
                 // height: 30,
-                width: 25,
+                width: 40,
               ),
-              SizedBox(
-                width: 8,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 4.0),
-                child: Text(
-                  "Havij",
-                  style: TextStyle(
-                    fontSize: 21,
-                    color: Colors.orange[900],
-                  ),
-                ),
-              ),
+              // SizedBox(
+              //   width: 8,
+              // ),
+              // Padding(
+              //   padding: const EdgeInsets.only(top: 4.0),
+              //   child: Text(
+              //     "Havij",
+              //     style: TextStyle(
+              //       fontSize: 21,
+              //       color: Colors.orange[900],
+              //     ),
+              //   ),
+              // ),
             ],
           ),
           CartIcon(),

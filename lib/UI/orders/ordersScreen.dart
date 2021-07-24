@@ -46,8 +46,49 @@ class OrdersScreen extends StatelessWidget {
                         ),
                       ),
                     )
-                  : Container();
+                  : EmptyOrderContainer();
             })),
+      ),
+    );
+  }
+}
+
+class EmptyOrderContainer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 32),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 80,
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 70, right: 70),
+            child: Image.asset(
+              "assets/images/tab_orders_off.png",
+              color: Colors.black12,
+            ),
+          ),
+          SizedBox(
+            height: 32,
+          ),
+          Text(
+            "No Orders",
+            style: TextStyle(
+                fontSize: 24,
+                color: Appcolors().textColor2,
+                fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Text(
+            "After you place an order it will appear here",
+            style: TextStyle(fontSize: 16, color: Appcolors().textColor2),
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }

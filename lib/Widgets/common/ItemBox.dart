@@ -58,7 +58,7 @@ class ItemBox extends StatelessWidget {
                 ),
                 Text(
                   title,
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   height: 8,

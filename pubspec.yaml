@@ -76,11 +76,12 @@ flutter:
     - assets/images/heart_outline_icon.png
     - assets/images/right_arrow_icon.png
     - assets/images/filter_icon.png
-    - assets/images/splash_logo.png
     - assets/images/bg.png
     - assets/images/order_success_artwork.png
     - assets/images/status_icon.png
     - assets/images/status_inprogress_icon.png
+    - assets/images/logo_splash.png
+
 
     #TEMP
     - assets/images/temp/item1.png
