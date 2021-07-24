@@ -26,7 +26,7 @@ class AddOrderScreen extends StatelessWidget {
     orderController.addOrder(newOrder);
     cartConroller.removeAll();
     orderController.getOrders();
-    Get.offAndToNamed("/orderSuccess");
+    Get.offAndToNamed("/orderSuccess", arguments: newOrder.id);
   }
 
   @override

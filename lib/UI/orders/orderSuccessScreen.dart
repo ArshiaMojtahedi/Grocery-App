@@ -4,6 +4,7 @@ import 'package:grocery_app/Utils/colors.dart';
 import 'package:grocery_app/Widgets/common/button.dart';
 
 class OrderSuccessScreen extends StatelessWidget {
+  String id = Get.arguments;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,16 +56,18 @@ class OrderSuccessScreen extends StatelessWidget {
               height: 32,
             ),
             AppRaiseButton(
-              height: 60,
-              width: 330,
-              label: "Track Order",
-              function: () => Get.back(),
-            ),
+                height: 60,
+                width: 330,
+                label: "Track Order",
+                function: () {
+                  Get.offNamed('/main');
+                  Get.toNamed('/orderDetail', arguments: id);
+                }),
             SizedBox(
               height: 16,
             ),
             GestureDetector(
-              onTap: () => Get.offAndToNamed("/main"),
+              onTap: () => Get.offNamed('/main'),
               child: Container(
                 height: 44,
                 width: 330,
