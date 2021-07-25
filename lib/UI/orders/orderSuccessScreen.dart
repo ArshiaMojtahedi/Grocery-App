@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/Utils/colors.dart';
 import 'package:grocery_app/Widgets/common/button.dart';
+import 'package:lottie/lottie.dart';
 
 class OrderSuccessScreen extends StatelessWidget {
   String id = Get.arguments;
@@ -17,18 +18,12 @@ class OrderSuccessScreen extends StatelessWidget {
         ),
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              height: 151,
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 50, right: 70),
-              child: Image.asset(
-                "assets/images/order_success_artwork.png",
-              ),
-            ),
-            SizedBox(
-              height: 32,
+            Lottie.asset(
+              'assets/images/lottie/done.json',
+              repeat: false,
+              fit: BoxFit.fill,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),

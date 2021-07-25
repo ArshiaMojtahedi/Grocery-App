@@ -1,6 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:grocery_app/Widgets/common/twoButtonAlertDialog.dart';
 import 'package:grocery_app/models/cartItem.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:lottie/lottie.dart';
 
 class CartConroller extends GetxController {
   Box<CartItem> dataBox;
@@ -28,6 +31,21 @@ class CartConroller extends GetxController {
       dataBox.put(item.id, newItem);
     }
     update();
+    // Get.rawSnackbar(
+    //   margin: EdgeInsets.all(16),
+    //   padding: EdgeInsets.all(50),
+    //   maxWidth: 100,
+    //   snackPosition: SnackPosition.TOP,
+    //   backgroundColor: Colors.white,
+    //   borderRadius: 25,
+    //   animationDuration: Duration(milliseconds: 500),
+    //   message: " ",
+    //   icon: Container(
+    //     color: Colors.white,
+    //     child: Lottie.asset('assets/images/lottie/cart_change.json',
+    //         fit: BoxFit.fill, repeat: false, reverse: true),
+    //   ),
+    // );
   }
 
   increaseItem(int id) {
@@ -62,7 +80,17 @@ class CartConroller extends GetxController {
   }
 
   removeItem(int id) {
-    dataBox.delete(id);
+    Get.dialog(
+        TwoButtonAlertDialog(
+          text: 'Are you sure you want to delete this item from your cart?',
+          yesFunction: () {
+            dataBox.delete(id);
+            update();
+            Get.back();
+          },
+          noFunction: () => Get.back(),
+        ),
+        barrierDismissible: false);
     //dataBox.clear();
     update();
   }

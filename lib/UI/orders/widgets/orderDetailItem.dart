@@ -74,15 +74,6 @@ class OrderDetailItem extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
-              height: 8,
-            ),
-            Divider(
-              thickness: 1,
-            ),
-            SizedBox(
-              height: 4,
-            ),
           ],
         ),
       ),

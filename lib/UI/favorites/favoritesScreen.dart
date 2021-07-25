@@ -34,8 +34,20 @@ class FavoritesScreen extends StatelessWidget {
                             ),
                             Container(
                               padding: EdgeInsets.all(16),
-                              child: ListView.builder(
-                                padding: EdgeInsets.only(left: 16, right: 16),
+                              child: ListView.separated(
+                                separatorBuilder: (ctx, i) => Column(
+                                  children: [
+                                    SizedBox(
+                                      height: 4,
+                                    ),
+                                    Divider(
+                                      thickness: 1,
+                                    ),
+                                    SizedBox(
+                                      height: 4,
+                                    ),
+                                  ],
+                                ),
                                 shrinkWrap: true,
                                 physics: NeverScrollableScrollPhysics(),
                                 itemCount: controller.dataBox.length,

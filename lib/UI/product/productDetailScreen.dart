@@ -9,6 +9,7 @@ import 'package:grocery_app/Utils/tempData.dart';
 import 'package:grocery_app/Widgets/common/appbar.dart';
 import 'package:grocery_app/Widgets/common/appbarLayout.dart';
 import 'package:grocery_app/Widgets/common/button.dart';
+import 'package:grocery_app/Widgets/common/twoButtonAlertDialog.dart';
 import 'package:grocery_app/models/cartItem.dart';
 import 'package:grocery_app/models/favoriteItem.dart';
 import 'package:grocery_app/models/product.dart';
@@ -223,9 +224,25 @@ class ProductDetailScreen extends StatelessWidget {
                       function: () {
                         if (controller.itemExist(product.id)) {
                           if (controller.quantityCartEqual(product.id)) {
-                            controller.removeItem(product.id);
-                            cartConroller.update();
-                            Get.back();
+                            Get.dialog(
+                                TwoButtonAlertDialog(
+                                  text:
+                                      'Are you sure you want to delete this item from your cart?',
+                                  yesFunction: () {
+                                    String pName = controller.dataBox
+                                        .get(product.id)
+                                        .title;
+                                    controller.removeItem(product.id);
+                                    cartConroller.update();
+                                    Get.back();
+                                    Get.back();
+                                    Get.snackbar("Item Removed",
+                                        "$pName has been removed from your cart",
+                                        colorText: Appcolors().red);
+                                  },
+                                  noFunction: () => Get.back(),
+                                ),
+                                barrierDismissible: false);
                           } else {
                             controller.changeItemQuantity(CartItem(
                               id: product.id,
@@ -236,6 +253,9 @@ class ProductDetailScreen extends StatelessWidget {
                               amount: controller.quantity,
                             ));
                             cartConroller.update();
+                            Get.back();
+                            Get.snackbar("Quantity Changed",
+                                "${controller.dataBox.get(product.id).title} quantity has been changed to ${controller.dataBox.get(product.id).amount.toString()}");
                           }
                         } else {
                           controller.addItem(CartItem(
@@ -247,6 +267,9 @@ class ProductDetailScreen extends StatelessWidget {
                             amount: controller.quantity,
                           ));
                           cartConroller.update();
+                          Get.back();
+                          Get.snackbar("Item added",
+                              "${controller.dataBox.get(product.id).title} is now your cart!");
                         }
                       },
                     ),

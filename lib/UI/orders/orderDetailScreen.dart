@@ -92,7 +92,20 @@ class OrderDetailScreen extends StatelessWidget {
                           SizedBox(
                             height: 8,
                           ),
-                          ListView.builder(
+                          ListView.separated(
+                            separatorBuilder: (ctx, i) => Column(
+                              children: [
+                                SizedBox(
+                                  height: 4,
+                                ),
+                                Divider(
+                                  thickness: 1,
+                                ),
+                                SizedBox(
+                                  height: 4,
+                                ),
+                              ],
+                            ),
                             shrinkWrap: true,
                             physics: NeverScrollableScrollPhysics(),
                             itemCount: controller.item.items.length,
