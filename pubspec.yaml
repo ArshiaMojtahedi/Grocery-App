@@ -82,6 +82,15 @@ flutter:
     - assets/images/status_icon.png
     - assets/images/status_inprogress_icon.png
     - assets/images/logo_splash.png
+    - assets/images/profile_photo.jpg
+    - assets/images/logout_icon.png
+    - assets/images/mydetails_icon.png
+    - assets/images/payment_icon.png
+    - assets/images/promo_icon.png
+    - assets/images/notification_icon.png
+    - assets/images/help_icon.png
+    - assets/images/about_icon.png
+    - assets/images/addresses_icon.png
 
     #Lottie JSON
     - assets/images/lottie/done.json
